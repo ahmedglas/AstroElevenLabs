@@ -7,8 +7,6 @@ const cors = require('cors');
 
 
 const port = config.get('port');
-
-
 const app = express();
 
 app.use(express.json());
