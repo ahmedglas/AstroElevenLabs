@@ -28,7 +28,7 @@ const AstronautList = () => {
       {!isLoading ? (
         <div
           className='center-container'
-          style={astronauts.length === 0 ? { height: '100vh' } : {}}
+          style={astronauts.length === 0 ? { height: '85vh', placeItems: 'center' } : {}}
         >
           <GalaxyButton onClick={() => navigate('/add')} />
         </div>
