@@ -2,8 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import '../styles/GalaxyButton.css';
 import PropTypes from 'prop-types';
 
-
-const GalaxyButton = ({onClick}) => {
+const GalaxyButton = ({ onClick }) => {
   const particlesRef = useRef(null);
 
   useEffect(() => {

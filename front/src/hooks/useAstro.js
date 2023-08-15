@@ -1,7 +1,6 @@
 import { useQuery } from 'react-query';
 import api from '../utils/axiosInstance';
 
-
 const useFetchAstro = () => {
   const { isLoading, data, isError } = useQuery({
     queryKey: ['astronauts'],

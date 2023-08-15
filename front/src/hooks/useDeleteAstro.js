@@ -2,7 +2,6 @@ import { useMutation, useQueryClient } from 'react-query';
 import { toast } from 'react-toastify';
 import api from '../utils/axiosInstance';
 
-
 const useDeleteAstro = () => {
   const queryClient = useQueryClient();
   const { mutate: deleteAstro, isLoading: deleteAstroLoading } = useMutation({

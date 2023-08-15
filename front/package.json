@@ -23,9 +23,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.{js}",
-    "lint:fix": "eslint --fix src/**/*.{js}",
-    "format": "prettier --write src/**/*.{js,css} --config ./.prettierrc",
+    "lint": "eslint \"src/**/*.js\"",
+    "lint:fix": "eslint --fix \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*{.js,.css}\" --config ./.prettierrc",
     "cy:run-ct": "cypress run --component --browser chrome"
   },
   "eslintConfig": {
@@ -45,5 +45,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-plugin-react": "^7.33.1",
+    "prettier": "^3.0.2"
   }
 }

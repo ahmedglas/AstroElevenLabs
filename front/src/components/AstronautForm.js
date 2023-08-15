@@ -35,7 +35,6 @@ const AstronautForm = ({ onSubmit }) => {
     }
   }, [state, id]);
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     let data = {
@@ -44,7 +43,7 @@ const AstronautForm = ({ onSubmit }) => {
       mission: mission.current.value,
     };
     const isFormValid = await schema.isValid(data, {
-      abortEarly: false, 
+      abortEarly: false,
     });
     // If form is not valid, set errors and return
     if (!isFormValid) {
@@ -78,8 +77,8 @@ const AstronautForm = ({ onSubmit }) => {
   };
 
   return (
-      <div className='card-body'>
-        <form className='card-form' onSubmit={handleSubmit}>
+    <div className='card-body'>
+      <form className='card-form' onSubmit={handleSubmit}>
         <p className='card-header'>{id ? 'Update Astronaut' : 'Add Astronaut'}</p>
         <div>
           <div className='card-content'>
@@ -98,14 +97,16 @@ const AstronautForm = ({ onSubmit }) => {
             {errors.mission && <p className='error'>Mission must be between 8 and 32 characters</p>}
           </div>
           <div className='card-actions'>
-            <button className='button' type='submit'>{id ? 'Update' : 'Add'}</button>
-            <button className = 'button delete' type='button' onClick={() => navigate('/')}>
-               Cancel
+            <button className='button' type='submit'>
+              {id ? 'Update' : 'Add'}
+            </button>
+            <button className='button delete' type='button' onClick={() => navigate('/')}>
+              Cancel
             </button>
           </div>
-          </div>
-        </form>
-      </div>
+        </div>
+      </form>
+    </div>
   );
 };
 

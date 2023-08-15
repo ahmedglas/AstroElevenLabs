@@ -2,11 +2,10 @@ import { useMutation, useQueryClient } from 'react-query';
 import { toast } from 'react-toastify';
 import api from '../utils/axiosInstance';
 
-
 const useCreateAstro = () => {
   const queryClient = useQueryClient();
   const { mutate: createAsto, isLoading } = useMutation({
-    mutationFn: async (data) => await api.post('/', data), 
+    mutationFn: async (data) => await api.post('/', data),
     onSuccess: () => {
       queryClient.invalidateQueries('astronauts');
       toast.success('Astronaut add successfully!', {

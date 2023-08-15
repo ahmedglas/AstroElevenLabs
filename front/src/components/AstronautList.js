@@ -11,19 +11,26 @@ const AstronautList = () => {
 
   if (isLoading) {
     return (
-      <div className= 'center-container' >
+      <div className='center-container'>
         <ThreeDots type='ThreeDots' color='#007bff' height='150' width='150' />
       </div>
     );
   }
   if (isError) {
-    return <h1 className='center-container' style={{color: 'white'}}>Error loading astronauts. Please try again later.</h1>;
+    return (
+      <h1 className='center-container' style={{ color: 'white' }}>
+        Error loading astronauts. Please try again later.
+      </h1>
+    );
   }
   return (
     <>
       {!isLoading ? (
-        <div className='center-container' style={astronauts.length ===0 ? {height: '100vh'} : {}} >
-            <GalaxyButton onClick={() => navigate('/add')} />
+        <div
+          className='center-container'
+          style={astronauts.length === 0 ? { height: '100vh' } : {}}
+        >
+          <GalaxyButton onClick={() => navigate('/add')} />
         </div>
       ) : (
         ''
