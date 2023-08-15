@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./server:/server
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/astronautes
+    networks:
+      - app-network
+
+  front:
+    build:
+      context: .
+      dockerfile: ./front/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./front:/front
+    networks:
+      - app-network
+
+  mongo:
+    image: "mongo:latest"
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,141 @@
+:root {
+  --primary-color: #8d1a5f;
+  --error-color: red;
+  --button-padding: 5px 15px;
+  --border-radius: 4px;
+}
+
+/* Handle Error */
+.error {
+  border: 1px solid var(--error-color);
+  background-color: #ffe6e6;
+  color: var(--error-color);
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px 0;
+  display: inline-block;
+}
+
+/* Bold Text */
+.b {
+  font-weight: 600;
+}
+
+/* Center Container */
+.center-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 10vh;
+}
+
+/* Card Header */
+.card-header {
+  font-size: 23px;
+  padding-bottom: 10px;
+}
+
+/* Card Actions */
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Base Button Class */
+.button {
+  display: inline-block;
+  padding: var(--button-padding);
+  border: 0px;
+  background-color: #f89b22;
+  color: #ffffff;
+  /* color: var(--primary-color); */
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.button:hover,
+.button:focus {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button.delete:hover,
+.button.delete:focus {
+  background-color: var(--error-color);
+}
+
+/* Card Body */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 14vh;
+}
+
+/* Card Content */
+.card-content {
+  margin-bottom: 20px;
+}
+
+/* Card Form */
+.card-form {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2vh 13vh;
+  background-color: white;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: min-content;
+}
+.card-form label {
+  margin-bottom: 5px;
+}
+.card-form input {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+/* Flex Container */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 16vh;
+  justify-content: center;
+  overflow-y: auto;
+  max-height: 550px;
+}
+
+/* Astronaut Card */
+.astronaut-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  word-wrap: break-word;
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+.astronaut-card:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 6em 3em hsla(0, 97%, 61%, 0.5),
+    0 0.05em 0 0 hsl(0, 97%, 80%) inset,
+    0 -0.05em 0 0 hsl(0, 97%, 10%) inset;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-form {
+    padding: 2vh 5vh;
+  }
+  .flex-container {
+    padding-top: 10vh;
+  }
+}
